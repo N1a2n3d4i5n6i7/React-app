@@ -1,0 +1,13 @@
+.body {
+height : 500px
+}
+.card {
+    height:150px;
+    width: 200px;
+    border: 2px solid green;
+    margin: 20px;
+} 
+.resto-container {
+    padding: 20px;
+    display: flex;
+}
