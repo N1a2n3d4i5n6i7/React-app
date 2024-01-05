@@ -1,25 +1,107 @@
-.body {
-height : 700px;
+*{
+    padding: 0px;
+    margin: 0px;
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+} 
+.header-logo{
+    height: 40px;
+    width: 40px;
+}
+.navbar{
+    height:80px;
+    background-color: #ffffff;
+    box-shadow: 0px 10px 20px -20px rgb(120,100,109);
+    z-index: 9999;
+}
+/* .navbar-left .navbar-nav{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+} */
+.navbar .global-nav{
+    max-width: 1200px;
+    min-width: 1200px;
+    display: flex;
+    justify-content: space-between  ;
+    padding: 0px;
+    margin: 0px;
+}
+.navbar .navbar-left{
+    display: flex;
+    align-items: center;
+    position: relative;
+    left: 50px;
+    top:0px
+} 
+.location .location-select{
+    width:180px;
+    padding:10px;
+    margin-left: 50px;
+    font-size: 15px;
+    border: none;
+}
+.navbar .navbar-right{
+    display: flex;
+    align-items: center;
+    position: relative;
+    justify-content: space-between  ;
+    left: 50px;
+    top:0px
 
 }
-.card1 {
-    height: 100%;
-    width:250px;
-    border:3px solid rgb(199, 13, 13);
-    margin: 10px;
-
+.navbar-right .search-input{
+    margin-top: 8px;
+    border-radius: 5px;
+   
+}
+.navbar .navbar-right li{
+    font-size: 20px;
+}
+.scroll-menu {
+    height:300px;
+    width:300px;
+}
+.scroll-menu .card-image{
+    height:120px;
+    width:200px;
+    border-radius: 5px;
+}
+.scroll-menu .card{
+    height:auto;
+    width:200px;
+    border:none;
+   
+}
+.scroll-menu .card:hover{
+    transform: scale(0.95);
+    cursor: pointer;
+}
+.resto-container{
+    max-width:1200px;
+    display: grid;
+    grid-template-columns: repeat(4,25%);
+    justify-content: center;
+    position: relative;
+    left:80px;
+    
+}
+.resto-container .scroll-menu{
+    margin-top: 10px;
+    display: grid;
+    justify-content: center;
+   
 } 
 .card-body {
-    width: 170px;
-    height: 100%;
+    padding: 0px;
 }
- .resto-container {
-   
-    display: flex;
-    padding: 20px;
-    
-} img  {
-    max-width: 100%;
-    max-height: 100%;
+.topresheading{
+    color:rgb(174, 100, 10);
+
 }
 
+
+
+
+
+
+  

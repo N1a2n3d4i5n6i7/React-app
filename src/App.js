@@ -1,7 +1,7 @@
 import React from "react";
 import  ReactDOM  from "react-dom/client";
-import Headercomponent from "./components/HeaderComponent";
-import Footercomponent from "./components/FooterComponent";
+import Myheader from "./components/HeaderComponent";
+import Myfooter from "./components/FooterComponent";
 import Bodycomponent from "./components/BodyComponent";
 
 
@@ -28,9 +28,9 @@ import Bodycomponent from "./components/BodyComponent";
 const Appcomponent = ()=>{
     return (
         <div className="App">
-            <Headercomponent></Headercomponent>
-            <Bodycomponent></Bodycomponent>
-            <Footercomponent></Footercomponent>
+            <Myheader></Myheader>
+           <Bodycomponent></Bodycomponent>
+            <Myfooter></Myfooter>
         </div>
     )
 }

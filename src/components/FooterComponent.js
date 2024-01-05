@@ -1,5 +1,5 @@
 // Footer component
-const Footercomponent = () => {
+const Myfooter = () => {
     return (
         <div className="site-footer">
         <nav className="navbar navbar-expand bg-danger">
@@ -13,4 +13,4 @@ const Footercomponent = () => {
     </div>
     )
 };
-export default Footercomponent;
+export default Myfooter;
