@@ -33,13 +33,7 @@
     left: 50px;
     top:0px
 } 
-.location .location-select{
-    width:180px;
-    padding:10px;
-    margin-left: 50px;
-    font-size: 15px;
-    border: none;
-}
+/* s */
 .navbar .navbar-right{
     display: flex;
     align-items: center;
@@ -57,8 +51,9 @@
 .navbar .navbar-right li{
     font-size: 20px;
 }
+/* Body */
 .scroll-menu {
-    height:300px;
+    height:350px;
     width:300px;
 }
 .scroll-menu .card-image{
@@ -95,10 +90,36 @@
     padding: 0px;
 }
 .topresheading{
-    color:rgb(174, 100, 10);
-
+    font-size:30px;
+   position: relative;
+    left:130px;
+    
 }
 
+.onlinedel-heading{
+    font-size:30px;
+    position: relative;
+    left:130px;
+    
+}
+
+/* on mind */
+.mind-section{
+    display: flex;
+    justify-content: space-between;
+    position: relative;
+    left: 100px;
+    max-width: 1000px;
+}
+.food-item{
+    height: 150px;
+    width: 150px;
+}
+.mind-heading{
+    position: relative;
+    left: 130px;
+    top: 15px;
+}
 
 
 
