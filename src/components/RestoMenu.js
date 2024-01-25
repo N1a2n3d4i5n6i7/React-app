@@ -3,38 +3,50 @@ import { useState, useEffect } from "react";
 import axios from "axios";
 import Restorentcatagory from "./restorentcatagory";
 
+ const RestoMenu = () => {
+ const [resmenuInfo, setresmenuInfo] = useState(null);
+ const { resId } = useParams();
+ console.log(resId);
+    useEffect( () => {
+           fetchMenu();
+     }, []);
+    
+       const fetchMenu = async() => {
+         try {
+          const menurespo = await axios.get("https://www.swiggy.com/dapi/menu/pl?page-type=REGULAR_MENU&complete-menu=true&lat=14.6818877&lng=77.6005911&restaurantId="+resId);
+       //  const jsonData = await menurespo.json();
+      
+      // console.log(menurespo);
+      setresmenuInfo(menurespo.data);
+     } catch { }
+      // const itemsCards2 = menurespo.data.data.cards[2].groupedCard.cardGroupMap.REGULAR.cards[1].card.card.itemCards;
+    //   const { name, city, areaName, cuisines } = resmenuInfo?.data?.cards[0]?.card?.card?.info;
+      //console.log(itemscards);
+     };
 
-const RestoMenu = () => {
-    const [restomenuInfo,setresmenuInfo] = useState(null);
-    const {resId} = useParams();
+      //DeStructering the Data
+        //if( resmenuInfo === null) { return <Shimmer/>}
 
-   // console.log(resId);
-    useEffect(() => {
-        fetchMenu();
-    }, []);
+       // const { name, cuisines } = resmenuInfo?.data?.cards[0]?.card?.card?.info;
+    // const   itemCards  = resmenuInfo?.data?.cards[2].groupedCard.cardGroupMap.REGULAR.cards[1].card.card;
+     const catagories  = resmenuInfo?.data?.cards[2]?.groupedCard?.cardGroupMap?.REGULAR.cards.filter(
+        (c) => c.card?.card?.["@type"] == "type.googleapis.com/swiggy.presentation.food.v2.ItemCategory");
+     // console.log(catagories);
 
-    const fetchMenu = async() => {
-    const RestomenuData =  await axios.get("https://www.swiggy.com/dapi/menu/pl?page-type=REGULAR_MENU&complete-menu=true&lat=14.6818877&lng=77.6005911&restaurantId="+resId);
-    //const jsonData =  await menurespo.json();
-    setresmenuInfo(RestomenuData.data);
-    const itemcardslist = RestomenuData.data.data.cards[2].groupedCard.cardGroupMap.REGULAR.cards[1].card.card.itemCards;
-    console.log(itemcardslist);
- }
- return (
-  <div className="restomenubar">
-      <h2 className="restoname">{restomenuInfo?.data?.cards[0]?.card?.card?.info.name}</h2>
-      <h2 className="restoname">{restomenuInfo?.data?.cards[0]?.card?.card?.info.locality}</h2>
-      <h3 className="restoname">{restomenuInfo?.data?.cards[0]?.card?.card?.info.aggregatedDiscountInfo.header}</h3>
-      <h3 className="restoname">{restomenuInfo?.data?.cards[0]?.card?.card?.info.sla.deliveryTime} mins</h3>
+     return (
+        <div className="about-us">
+                 {/* <h1>{ name }</h1> 
+             <p> { cuisines.join(",") }</p>    */}
+            {/* <p> { catagories[0]?.card?.card?.title }</p>  */}
+            
+               { catagories?.map( (catagorie) => (        // catagories && catagories.map also works
+                // We will pass Each Catagorie to the component
+             // console.log(catagorie);
+                <Restorentcatagory data = { catagorie?.card?.card}   />
+              ))
+              }
+          </div>
+     );
+  }
 
-     <Restorentcatagory/>
-        
-
-  </div>
-  
-)
- 
-};
-
-export default RestoMenu;
-
+  export default RestoMenu;
