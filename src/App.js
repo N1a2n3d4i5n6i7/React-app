@@ -8,6 +8,8 @@ import Offers from "./components/OffersComponent";
 import Help from "./components/HelpComponent";
 import Error from "./components/Error Component";
 import RestoMenu from "./components/RestoMenu";
+import appStore from "./utill/appStore";
+import { Provider } from "react-redux";
 
 
 
@@ -28,11 +30,13 @@ import RestoMenu from "./components/RestoMenu";
 // App component
 const Appcomponent = ()=>{
     return (
+        <Provider store = {appStore}>
         <div className="App">
             <Myheader></Myheader>
            <Outlet/>
             <Myfooter></Myfooter>
         </div>
+        </Provider>
     )
 };
 // Mnual way of showing

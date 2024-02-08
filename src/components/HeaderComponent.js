@@ -1,13 +1,17 @@
 // Header Cmponent
 import { Link } from "react-router-dom";
+import { useSelector } from "react-redux";
 
 const Myheader = () => {
-    return (
+    // Here we are subscribing to the store using selector.
+ const cartItems = useSelector( (store) => store.cart.items);
+   console.log(cartItems);
+ return (
        <div className="site-header">
         <nav className="navbar navbar-expand ">
             <div className="global-nav">
              <div className="navbar-left">
-             <a href="#" ><img className="header-logo" src="https://cdn.worldvectorlogo.com/logos/swiggy-1.svg" ></img></a>
+             <Link to="/" ><img className="header-logo" src="https://cdn.worldvectorlogo.com/logos/swiggy-1.svg" ></img></Link>
              </div>  
              {/* <div className="location">
                             <select className="location-select">
@@ -28,10 +32,10 @@ const Myheader = () => {
                         <Link to ="/Help" className="nav-link"> Help </Link>
                         </li>
                         <li className="nav-item">
-                            <a className="nav-link" href="#">Sign In</a>
+                            <Link to="/signin" className="nav-link">Sign In</Link>
                          </li>
                         <li className="nav-item">
-                        <a className="nav-link" href="#">Cart</a>
+                        <Link to="/cart" className="nav-link">Cart ({cartItems.length})</Link>
                         </li>
                     </ul>
             </div>
